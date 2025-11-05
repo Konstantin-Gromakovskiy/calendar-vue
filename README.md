@@ -1,48 +1,54 @@
-# .
+# Calendar Test
 
-This template should help get you started developing with Vue 3 in Vite.
+A small demo project using Vue 3 + TypeScript that includes a calendar component.
 
-## Recommended IDE Setup
+## Description
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This project contains the `MyCalendar.vue` component which:
 
-## Recommended Browser Setup
+- Renders a monthly grid of dates.
+- Allows switching months and selecting a day.
+- Supports editing the current date via the header (ISO format YYYY-MM-DD).
+- Uses `vue-i18n` for localization (for example, the `invalid_date` key is used for error messages).
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Stack
 
-## Type Support for `.vue` Imports in TS
+- Vue 3 (Composition API)
+- TypeScript
+- vue-i18n
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Installation and running
 
-## Customize configuration
+Requirements: Node.js (14+)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Install dependencies:
+   npm install
 
-## Project Setup
+2. Run the dev server (if using Vite/CLI):
+   npm run dev
 
-```sh
-npm install
-```
+3. Build for production:
+   npm run build
 
-### Compile and Hot-Reload for Development
+(Adjust commands to your project's scripts if they differ.)
 
-```sh
-npm run dev
-```
+## Important files
 
-### Type-Check, Compile and Minify for Production
+- src/components/MyCalendar.vue — the main calendar component.
+- src/utils/getMonthArr.ts — utility to generate the month's day array.
+- src/locales/... — localization files for vue-i18n.
 
-```sh
-npm run build
-```
+## Localization and date format
 
-### Lint with [ESLint](https://eslint.org/)
+- The header and weekday names use `vue-i18n`/Intl (`d()`).
+- When typing a date, the component expects ISO format (YYYY-MM-DD). An invalid format triggers the `invalid_date` message.
 
-```sh
-npm run lint
-```
+## Tips and improvements
+
+- Add validation and user hints for date input.
+- Improve keyboard navigation (arrow keys) and accessibility.
+- Add unit and/or e2e tests for the component.
+
+## Contributing and bugs
+
+PRs and issues are welcome — please include clear reproduction steps when reporting bugs.
